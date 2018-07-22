@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//hello world
 class CardDeck
 {
   private:
@@ -29,7 +30,7 @@ void CardDeck::createDeck()
   int i = 0;
   int j = 0;
   int x;
-  
+
   cout << "This is the UNSHUFFLED deck. \n \n"<< endl;
 
   for(int i = 0; i < 4; i++)
@@ -37,12 +38,12 @@ void CardDeck::createDeck()
     for(int f = 0; f < 13; f++)
     {
       cardSet.push_back(numValue[j] + suit[i]);
-      j++; 
-       
+      j++;
+
       cout << x+1 << "\t" << cardSet[x] << endl;
       x++;
-    } 
-    j = 0;  
+    }
+    j = 0;
   }
 
   cout << endl << endl;
@@ -55,8 +56,8 @@ void CardDeck::shuffleDeck()
   random_shuffle (randDeck.begin(), randDeck.end());
 
   cout << "This the SHUFFLED deck. \n \n" << endl;
- for(int i = 0; i < 52; i++) 
-  cout << i << "    " << randDeck[i] << endl; 
+ for(int i = 0; i < 52; i++)
+  cout << i << "    " << randDeck[i] << endl;
   cout << endl << endl;
 
 }
@@ -96,7 +97,7 @@ bool CardDeck::isGreater(string& card1, string& card2)
 }
 
 int main() {
-  
+
   CardDeck d;
   string a, b;
 
