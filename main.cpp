@@ -1,10 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <cstdlib>
-#include <ctime>
-#include <iterator>
 #include "Carddeck.h"
 
 using namespace std;
