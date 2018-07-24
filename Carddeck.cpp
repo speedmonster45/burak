@@ -7,6 +7,7 @@
 #include <iterator>
 #include "Carddeck.h"
 
+int CardDeck::rndCount = 0;
 
 void CardDeck::createDeck()
 {
@@ -46,8 +47,11 @@ void CardDeck::shuffleDeck()
 }
 string CardDeck::getCard()
 {
-  string card = randDeck[rand()%52];
-  currentCards.push_back(card);
+  string card = randDeck[0];
+  randDeck.erase(randDeck.begin());
+  usedCards.push_back(card);
+  ++rndCount;
+  cout << "The card count is at " << rndCount << endl;
   return card;
 }
 
@@ -78,3 +82,23 @@ bool CardDeck::isGreater(string& card1, string& card2)
   else
   return false;
 }
+
+void CardDeck::setTrumpCard()
+{
+  trumpCard = randDeck[0];
+  randDeck.erase(randDeck.begin());
+  randDeck.push_back(trumpCard);
+  cout << "Trump Card: " << trumpCard << endl << endl;
+
+  for(int i = 0; i < 52; i++)
+    cout << i << "    " << randDeck[i] << endl;
+  cout << endl << endl;
+}
+
+/*void CardDeck::outputDeck()
+{
+  for(int i = 0; i < randDeck.size(); i++)
+    cout << rndCount+i  << "\t" << randDeck[i] << endl;
+
+  cout << "card count at " << rndCount << endl;
+}*/
