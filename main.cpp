@@ -1,23 +1,22 @@
 #include <iostream>
 #include "Carddeck.h"
+#include "Playercard.h"
 
 using namespace std;
 
 //hello world
 
-int main() {
+int main() 
+{
 
-  CardDeck d;
-  string a, b;
+  PlayerCard h;
 
-  d.createDeck();
-  d.shuffleDeck();
-  a = d.getCard();
-  b = d.getCard();
+  h.startGame();
+  
 
-  cout << a << "\t" << b << endl << endl << endl;
+//  cout << a << "\t" << b << endl << endl << endl;
 
-if(d.isGreater(a,b))
-  cout << "Yes" << endl;
+//if(d.isGreater(a,b))
+  //cout << "Yes" << endl;
 
 }
